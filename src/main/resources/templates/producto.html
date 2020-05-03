@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Producto</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+       <div class="col-md-6">
+			  <div class="card mt-2">
+		      <div class="card-body">
+		        <h1>Nuevo Producto</h1>
+		        <form th:action="@{/procesar}" th:object="${product}" method="post"> 
+		          <div class="form-group">
+		            <label for="code" class="mb-1">Codigo</label>
+		            <input type="text" class="form-control form-control-sm" th:field="*{code}" id="code" name="code">
+		            <small th:errors="*{code}" style="color: #FF0000"></small>
+		          </div>
+		          <div class="form-group">
+		            <label for="name" class="mb-1">Nombre</label>
+		            <input type="text" class="form-control form-control-sm" th:field="*{name}" id="name" name="name">
+                <small th:errors="*{name}" style="color: #FF0000"></small>		          
+		          </div>
+		          <div class="form-group">
+		            <label for="brand" class="mb-1">Marca</label>
+		            <input type="text" class="form-control form-control-sm" th:field="*{brand}" id="brand" name="brand">
+		            <small th:errors="*{brand}" style="color: #FF0000"></small>  
+		          </div>
+		          <div class="form-group">
+		            <label for="remark" class="mb-1">Descripcion</label>
+		            <input type="text" class="form-control form-control-sm" th:field="*{remark}" id="remark" name="remark">
+		            <small th:errors="*{remark}" style="color: #FF0000"></small> 
+		          </div>
+		          <div class="form-group">
+		            <label for="inventory" class="mb-1">Existencia</label>
+		            <input type="text" class="form-control form-control-sm" th:field="*{inventory}" id="inventory" name="inventory">
+		            <small th:errors="*{inventory}" style="color: #FF0000"></small> 
+		          </div>
+		          <div class="form-group">
+		            <label for="date" >Fecha de ingreso</label>
+		            <input type="date" class="form-control form-control-sm" th:field="*{date}" id="date" name="date">
+		            <small th:errors="*{date}" style="color: #FF0000"></small> 
+		          </div>
+		          <button type="submit" class="btn btn-primary">Guardar Producto</button>
+		        </form>
+		      </div>
+	     </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
